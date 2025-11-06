@@ -619,6 +619,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 6714653377282262276, guid: 61a463efdd6c642b6899b22b6b6439c5, type: 3}
   - {fileID: 5431585230814629641, guid: e986a4e0c75a54682816ff2df4d6b90c, type: 3}
+  - {fileID: 7210941941526926798, guid: f01f6abe54cc740be86a65654d6fa6d8, type: 3}
   canvas: {fileID: 1249226982}
   parent: {fileID: 1229003985}
 --- !u!1 &2051756444

@@ -13,6 +13,6 @@ public class HtplHomeUIButton : BaseSoundButton
 
     protected override void OnClick()
     {
-         UIManager.Instance.Show<HowToPlayUI>();
+        UIManager.Instance.Show<HowToPlayUI>();
     }
 }

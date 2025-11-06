@@ -12,9 +12,15 @@ public class BaseSoundButton : BaseButton
 
     protected override void OnClick()
     {
-        throw new System.NotImplementedException();
+        // throw new System.NotImplementedException();
     }
     #endregion
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        transform.localScale = Vector3.one;
+    }
 
     protected override void OnClickListener()
     {

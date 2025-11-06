@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayHomeUIButton : BaseSoundButton
+public class ExitSelectLevelUIButton : BaseSoundButton
 {
     #region LoadComponents
     protected override void LoadComponents()
@@ -13,6 +13,6 @@ public class PlayHomeUIButton : BaseSoundButton
 
     protected override void OnClick()
     {
-        UIManager.Instance.Show<SelectLevelUI>();
+        UIManager.Instance.Hide<SelectLevelUI>();
     }
 }
