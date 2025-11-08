@@ -36,5 +36,44 @@ public class GameManager : BaseMonoBehaviour
     private void ShowHomeUI()
     {
         UIManager.Instance.Show<HomeUI>();
+        int indexUnlockLevel = SaveManager.Instance.DataSave.IndexUnlockLevel;
+        if (indexUnlockLevel == 0)
+        {
+            CheckUnlockLevel();
+        }
     }
+
+    public void LodGame()
+    {
+
+    }
+
+    public void CheckUnlockLevel()
+    {
+        int indexUnlockLevel = SaveManager.Instance.DataSave.IndexUnlockLevel;
+        DataUnlockLevel dataUnlockLevel = SaveManager.Instance.DataSave.ListDataUnlockLevel[indexUnlockLevel];
+        dataUnlockLevel.Unlock = true;
+    }
+
+    public void CheckWin()
+    {
+        SetBotAndTimePlay(1, 120);
+        if (IsMaxLevel()) return;
+        SaveManager.Instance.DataSave.IndexUnlockLevel += 1;
+        CheckUnlockLevel();
+    }
+
+    private void SetBotAndTimePlay(int sumBot, float timePlay)
+    {
+        int indexUnlockLevel = SaveManager.Instance.DataSave.IndexUnlockLevel;
+        DataUnlockLevel dataUnlockLevel = SaveManager.Instance.DataSave.ListDataUnlockLevel[indexUnlockLevel];
+        dataUnlockLevel.SetBotAndTimePlay(sumBot, timePlay);
+    }
+
+    private bool IsMaxLevel()
+    {
+        return SaveManager.Instance.DataSave.IndexUnlockLevel >= SaveManager.Instance.DataSave.ListDataUnlockLevel.Count - 1;
+    }
+
+
 }
